@@ -1,26 +1,26 @@
-- id: btccny
+- id: btckwd
   code: 3
-  #name: BTC/CNY      # default name
+  #name: BTC/KWD      # default name
   base_unit: btc
-  quote_unit: cny
+  quote_unit: kwd
   #price_group_fixed: 1 # aggregate price levels in orderbook
-  bid: {fee: 0, currency: cny, fixed: 2}
+  bid: {fee: 0, currency: kwd, fixed: 2}
   ask: {fee: 0, currency: btc, fixed: 4}
   sort_order: 1
   #visible: false     # default to true
-- id: ethcny
+- id: ethkwd
   code: 4
-  name: ETH/CNY     
+  name: ETH/KWD
   base_unit: eth
-  quote_unit: cny
+  quote_unit: kwd
   #price_group_fixed: 1 # aggregate price levels in orderbook
-  bid: {fee: 0, currency: cny, fixed: 2}
+  bid: {fee: 0, currency: kwd, fixed: 2}
   ask: {fee: 0, currency: eth, fixed: 4}
   sort_order: 1
   #visible: false     # default to true
 - id: ethbtc
   code: 5
-  name: ETH/BTC      
+  name: ETH/BTC
   base_unit: eth
   quote_unit: btc
   #price_group_fixed: 1 # aggregate price levels in orderbook
