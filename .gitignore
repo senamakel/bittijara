@@ -20,11 +20,9 @@ log
 tmp
 
 # Ignore all config files
-/config/application.yml
 /config/database.yml
 /config/slack.yml
 /config/amqp.yml
-/config/banks.yml
 
 # Ignore translations.js
 /public/javascripts/translations.js
