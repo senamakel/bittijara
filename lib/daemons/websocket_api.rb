@@ -26,6 +26,8 @@ EM.error_handler do |e|
   logger.error e.backtrace[0,20].join("\n")
 end
 
+logger.info "Connected to AMQP broker."
+
 EM.run do
   conn = AMQP.connect AMQPConfig.connect
   logger.info "Connected to AMQP broker."

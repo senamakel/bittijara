@@ -20,7 +20,7 @@
   @createPoint = (i, trade) ->
     # if the gap between old and new point is too wide (> 100 points), stop live
     # load and show hints
-    gap = Math.floor((trade.date-@next_ts) / (@minutes*60))
+    gap = Math.floor((trade.date - @next_ts) / (@minutes*60))
     if gap > 100
       console.log "failed to update, too wide gap."
       window.clearInterval @interval
@@ -33,6 +33,8 @@
       @last_ts = @next_ts
       @next_ts = @last_ts + @minutes*60
 
+      console.log @points
+
       [p, v] = if trade.date < @next_ts
                  [parseFloat(trade.price), parseFloat(trade.amount)]
                else
@@ -40,7 +42,13 @@
 
       @points.close.push [x, p]
       @points.candlestick.push [x, p, p, p, p]
-      @points.volume.push {x: x, y: v, color: if p >= @points.close[i][1] then 'rgba(0, 255, 0, 0.5)' else 'rgba(255, 0, 0, 0.5)'}
+      @points.volume.push {
+        x: x,
+        y: v,
+        # color: if p >= @points.close[i][1] then 'rgba(0, 255, 0, 0.5)' else 'rgba(255, 0, 0, 0.5)'
+        color: if false then 'rgba(0, 255, 0, 0.5)' else 'rgba(255, 0, 0, 0.5)'
+      }
+
       i += 1
     i
 
